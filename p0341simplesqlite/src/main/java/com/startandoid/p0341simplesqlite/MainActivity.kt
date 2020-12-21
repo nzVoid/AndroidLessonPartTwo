@@ -12,7 +12,6 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 
-
 class MainActivity : AppCompatActivity() {
     val LOG_TAG:String = "myLogs"
     private lateinit var btnAdd:Button
@@ -64,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     while (c.moveToNext())
                 }
-                else if{
+                else{
                     Log.d(LOG_TAG, "0 rows")
                 }
                 c.close()
@@ -77,25 +76,16 @@ class MainActivity : AppCompatActivity() {
         }
         dbHelper.close()
     }
-    internal class DBHelper(context: Context?) :
-        SQLiteOpenHelper(context, "myDB", null, 1) {
+
+    internal class DBHelper(context: Context?):SQLiteOpenHelper(context, "myDB", null, 1) {
         override fun onCreate(db: SQLiteDatabase) {
             Log.d("myLogs", "--- onCreate database ---")
             // создаем таблицу с полями
-            db.execSQL(
-                "create table mytable ("
-                        + "id integer primary key autoincrement,"
-                        + "name text,"
-                        + "email text" + ");"
-            )
+            db.execSQL("create table mytable (" + "id integer primary key autoincrement," + "name text," + "email text" + ");")
         }
 
-        override fun onUpgrade(
-            db: SQLiteDatabase,
-            oldVersion: Int,
-            newVersion: Int
-        ) {
+        override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int){
+
         }
     }
-
 }
