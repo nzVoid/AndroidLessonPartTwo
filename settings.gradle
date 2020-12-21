@@ -1,3 +1,7 @@
+include ':p0341simplesqlite'
+include ':p0331sharedpreferences'
+include ':p0321simplebrowser'
+include ':p0311simpleintents'
 include ':p0301activityresult'
 include ':p0291simpleactivityresult'
 include ':p0281intentextras'

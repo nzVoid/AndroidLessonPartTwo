@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         if(resultCode == Activity.RESULT_OK){
             when(requestCode){
                 REQUEST_CODE_COLOR ->{
-                    var color:Int = data!!.getIntExtra("color", Color.WHITE)
+                    var color:Int = data!!.getIntExtra("color", Color.RED)
                     tvText.setTextColor(color)
                 }
                 REQUEST_CODE_ALIGN ->{
